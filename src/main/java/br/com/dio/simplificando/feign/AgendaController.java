@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("agenda")
 public class AgendaController {
 
-	@Autowired
-	private ConsumindoApi consumindoApi;
+//	@Autowired
+//	private ConsumindoApi consumindoApi;
 	
-	@GetMapping
-	public Contato retornaContato() {
-		return consumindoApi.retornaContato();
-	}
+//	@GetMapping
+//	public Contato retornaContato() {
+//		return consumindoApi.retornaContato();
+//	}
 }
