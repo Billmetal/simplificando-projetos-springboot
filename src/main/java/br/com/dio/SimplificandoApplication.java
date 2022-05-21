@@ -19,6 +19,7 @@ public class SimplificandoApplication {
 	}
 	
 	
+	/** Referente ao pacote beans vs component **/
 //	@Bean
 //	public CommandLineRunner run(ConversorJson conversor) {
 //		return args -> {
@@ -28,13 +29,15 @@ public class SimplificandoApplication {
 //		};
 //	}
 	
-	@Bean
-	public CommandLineRunner run(SistemaMensagem sistema) throws Exception{
-		return args -> {
-			sistema.enviarConfirmacaoCadastro();
-			sistema.enviarMensagemBoasVindas();
-			sistema.enviarConfirmacaoCadastro();
-		};
-	}
+	
+	/** Referente ao pacote Scopes - Singleton ou Prototype **/
+//	@Bean
+//	public CommandLineRunner run(SistemaMensagem sistema) throws Exception{
+//		return args -> {
+//			sistema.enviarConfirmacaoCadastro();
+//			sistema.enviarMensagemBoasVindas();
+//			sistema.enviarConfirmacaoCadastro();
+//		};
+//	}
 
 }
