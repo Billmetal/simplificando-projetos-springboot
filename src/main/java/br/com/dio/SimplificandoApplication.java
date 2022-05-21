@@ -6,11 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
-import com.google.gson.Gson;
-
 import br.com.dio.imersao.beans_vs_component.ConversorJson;
 import br.com.dio.imersao.beans_vs_component.ViaCepResponse;
-import br.com.dio.imersao.primeiros_passos.Calculadora;
+import br.com.dio.imersao.scopes_singleton_prototype.SistemaMensagem;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -21,12 +19,21 @@ public class SimplificandoApplication {
 	}
 	
 	
+//	@Bean
+//	public CommandLineRunner run(ConversorJson conversor) {
+//		return args -> {
+//			String json = "{ \"cep\": \"01001-000\", \"logradouro\": \"Praça da Sé\",\"localidade\": \"Centro\" }";
+//			ViaCepResponse response = conversor.converter(json);
+//			System.out.println("Dados do CEP : "+ response);
+//		};
+//	}
+	
 	@Bean
-	public CommandLineRunner run(ConversorJson conversor) {
+	public CommandLineRunner run(SistemaMensagem sistema) throws Exception{
 		return args -> {
-			String json = "{ \"cep\": \"01001-000\", \"logradouro\": \"Praça da Sé\",\"localidade\": \"Centro\" }";
-			ViaCepResponse response = conversor.converter(json);
-			System.out.println("Dados do CEP : "+ response);
+			sistema.enviarConfirmacaoCadastro();
+			sistema.enviarMensagemBoasVindas();
+			sistema.enviarConfirmacaoCadastro();
 		};
 	}
 
